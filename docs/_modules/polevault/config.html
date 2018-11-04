@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>polevault.config &mdash; Pole Vault 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Pole Vault
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">About <strong>Pole Vault</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGELOG.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGELOG.html#id1">0.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../CHANGELOG.html#changes">Changes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGELOG.html#id2">0.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../CHANGELOG.html#id3">Changes:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">polevault</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/polevault.html">polevault package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault.config">polevault.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/tests.html">tests package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/tests.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tests.func.html">tests.func package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/tests.unit.html">tests.unit package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pole Vault</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../polevault.html">polevault</a> &raquo;</li>
+        
+      <li>polevault.config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for polevault.config</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot; Helper functions to deal with configuration files</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">configparser</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ConfigParser</span> <span class="k">as</span> <span class="nn">configparser</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<div class="viewcode-block" id="load_config_ini"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.load_config_ini">[docs]</a><span class="k">def</span> <span class="nf">load_config_ini</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Load configuration file with the option of</span>
+<span class="sd">        ignoring the DEFAULT section.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        full_path : str</span>
+
+<span class="sd">            File path to the configuration file.</span>
+
+<span class="sd">        default : bool, optional</span>
+
+<span class="sd">            Whether to allow the python ConfigParser to expand the</span>
+<span class="sd">            contents of the DEFAULT section into the other sections.</span>
+<span class="sd">            (the default is True, which expands copies all the</span>
+<span class="sd">            attributes inside the DEFAULT section into the other</span>
+<span class="sd">            sections inside which they don&#39;t exist already.)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        config : collections.OrderedDict</span>
+
+<span class="sd">            The configuration dictionary resulting from parsing the</span>
+<span class="sd">            configuration file. It is a collections.OrderedDict</span>
+<span class="sd">            dictionary so that the order of the sections and attributes</span>
+<span class="sd">            is preserved in the resulting dictionary.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+        <span class="n">default_section</span> <span class="o">=</span> <span class="s1">&#39;DEFAULT&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">default_section</span> <span class="o">=</span> <span class="s1">&#39;DEFAULT&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+    <span class="n">config_ini</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">(</span><span class="n">dict_type</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">,</span>
+                                           <span class="n">default_section</span><span class="o">=</span><span class="n">default_section</span><span class="p">,</span>
+                                           <span class="n">interpolation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">config_ini</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">config_ini</span><span class="o">.</span><span class="n">sections</span><span class="p">():</span>
+        <span class="n">config</span><span class="p">[</span><span class="n">section</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">config_ini</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>
+            <span class="n">config</span><span class="p">[</span><span class="n">section</span><span class="p">][</span><span class="n">option</span><span class="p">]</span> <span class="o">=</span> <span class="n">config_ini</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">config</span></div>
+
+
+<div class="viewcode-block" id="merge_default"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.merge_default">[docs]</a><span class="k">def</span> <span class="nf">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Merge the values of the DEFAULT item into the other items.</span>
+<span class="sd">    </span>
+<span class="sd">        Merge a dictionary that has an item with a &quot;DEFAULT&quot; key,</span>
+<span class="sd">        if that item is itself a dictionary, then merge that</span>
+<span class="sd">        item&#39;s subitems with all the other items in the dictionary</span>
+<span class="sd">        that are also themselves dictionaries.</span>
+
+<span class="sd">        The purpose is to mimic the behaviour of the [DEFAULT]</span>
+<span class="sd">        sections of .ini or .conf files when using .json or .yaml</span>
+<span class="sd">        files, or when using OrderedDict or dict data structures.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        config : dict or OrderedDict</span>
+
+<span class="sd">            The dictionary that is to have its &quot;DEFAULT&quot; key merged</span>
+<span class="sd">            with the other keys.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        OrderedDict or dict</span>
+
+<span class="sd">            The merged version of the dictionary as an OrderedDict,</span>
+<span class="sd">            or the original config (be it a dict or an OrderedDict)</span>
+<span class="sd">            if it had no &quot;DEFAULT&quot; key to begin with, or it was not</span>
+<span class="sd">            a dict or an OrderedDict.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;DEFAULT&quot;</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;DEFAULT&quot;</span><span class="p">]</span>
+        <span class="n">merged_config</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="s2">&quot;DEFAULT&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">merged_item</span> <span class="o">=</span> <span class="n">default</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                    <span class="n">merged_item</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+                    <span class="n">merged_config</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_item</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">merged_config</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">merged_config</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">config</span></div>
+
+
+<div class="viewcode-block" id="load_config_json"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.load_config_json">[docs]</a><span class="k">def</span> <span class="nf">load_config_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_json</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_json</span><span class="p">,</span> <span class="n">object_pairs_hook</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+                <span class="n">config</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_json</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_json</span><span class="p">,</span> <span class="n">object_pairs_hook</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+                <span class="n">config</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">config</span></div>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">yaml</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">my_unicode_repr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">represent_str</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+        <span class="n">yaml</span><span class="o">.</span><span class="n">representer</span><span class="o">.</span><span class="n">Representer</span><span class="o">.</span><span class="n">add_representer</span><span class="p">(</span><span class="n">unicode</span><span class="p">,</span> <span class="n">my_unicode_repr</span><span class="p">)</span>
+
+    <span class="n">YAML_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">YAML_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="k">if</span> <span class="n">YAML_AVAILABLE</span><span class="p">:</span>
+
+<div class="viewcode-block" id="OrderedDictYAMLLoader"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.OrderedDictYAMLLoader">[docs]</a>    <span class="k">class</span> <span class="nc">OrderedDictYAMLLoader</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">Loader</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A YAML loader that loads mappings into ordered dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">yaml</span><span class="o">.</span><span class="n">Loader</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;tag:yaml.org,2002:map&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">construct_yaml_map</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;tag:yaml.org,2002:omap&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">construct_yaml_map</span><span class="p">)</span>
+
+<div class="viewcode-block" id="OrderedDictYAMLLoader.construct_yaml_map"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.OrderedDictYAMLLoader.construct_yaml_map">[docs]</a>        <span class="k">def</span> <span class="nf">construct_yaml_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+            <span class="k">yield</span> <span class="n">data</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_mapping</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OrderedDictYAMLLoader.construct_mapping"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.OrderedDictYAMLLoader.construct_mapping">[docs]</a>        <span class="k">def</span> <span class="nf">construct_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">yaml</span><span class="o">.</span><span class="n">MappingNode</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">flatten_mapping</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">yaml</span><span class="o">.</span><span class="n">constructor</span><span class="o">.</span><span class="n">ConstructorError</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
+                                                        <span class="s1">&#39;expected a mapping node, but found </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                                                        <span class="n">node</span><span class="o">.</span><span class="n">start_mark</span><span class="p">)</span>
+            <span class="n">mapping</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">key_node</span><span class="p">,</span> <span class="n">value_node</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_object</span><span class="p">(</span><span class="n">key_node</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="nb">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">yaml</span><span class="o">.</span><span class="n">constructor</span><span class="o">.</span><span class="n">ConstructorError</span><span class="p">(</span><span class="s1">&#39;while constructing a mapping&#39;</span><span class="p">,</span>
+                                                            <span class="n">node</span><span class="o">.</span><span class="n">start_mark</span><span class="p">,</span> <span class="s1">&#39;found unacceptable key (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">exc</span><span class="p">,</span>
+                                                            <span class="n">key_node</span><span class="o">.</span><span class="n">start_mark</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_object</span><span class="p">(</span><span class="n">value_node</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span>
+                <span class="n">mapping</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">return</span> <span class="n">mapping</span></div></div>
+
+
+<div class="viewcode-block" id="load_config_yaml"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.load_config_yaml">[docs]</a><span class="k">def</span> <span class="nf">load_config_yaml</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">YAML_AVAILABLE</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_yaml</span><span class="p">:</span>
+                <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_yaml</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">OrderedDictYAMLLoader</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+                    <span class="n">config</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_yaml</span><span class="p">:</span>
+                <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_yaml</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">OrderedDictYAMLLoader</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+                    <span class="n">config</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">config</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="write_yaml"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.write_yaml">[docs]</a><span class="k">def</span> <span class="nf">write_yaml</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">YAML_AVAILABLE</span><span class="p">:</span>
+        <span class="n">final_yaml</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">final_yaml</span><span class="p">:</span>
+                <span class="n">final_yaml</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">heading</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">final_yaml</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">heading</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">]:</span>
+                <span class="n">yaml_item</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span> <span class="n">item</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="p">},</span>
+                                        <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">final_yaml</span> <span class="o">+=</span> <span class="s1">&#39;  </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">yaml_item</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">final_yaml</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">To use YAML files the pyyaml package must be installed.</span>
+<span class="s1">To install it try using one of the following commands:</span>
+
+<span class="s1">  conda install pyyaml</span>
+<span class="s1">    or</span>
+<span class="s1">  pip install pyyaml</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_file_type_and_mtime"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.get_file_type_and_mtime">[docs]</a><span class="k">def</span> <span class="nf">get_file_type_and_mtime</span><span class="p">(</span><span class="n">path_with_name</span><span class="p">):</span>
+    <span class="n">latest_mtime</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="n">latest_type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">path_with_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">explicit_type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">explicit_type</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">explicit_type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;.json&#39;</span><span class="p">,</span> <span class="s1">&#39;.conf&#39;</span><span class="p">,</span> <span class="s1">&#39;.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;.yml&#39;</span><span class="p">}:</span>
+            <span class="n">path_with_name</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">explicit_type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">explicit_type</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mtime</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">path_with_name</span> <span class="o">+</span> <span class="n">explicit_type</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mtime</span> <span class="o">&gt;</span> <span class="n">latest_mtime</span><span class="p">:</span>
+                <span class="n">latest_mtime</span> <span class="o">=</span> <span class="n">mtime</span>
+                <span class="n">latest_type</span> <span class="o">=</span> <span class="n">explicit_type</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">file_type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;.json&#39;</span><span class="p">,</span> <span class="s1">&#39;.conf&#39;</span><span class="p">,</span> <span class="s1">&#39;.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;.yml&#39;</span><span class="p">}:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">mtime</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">path_with_name</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">mtime</span> <span class="o">&gt;</span> <span class="n">latest_mtime</span><span class="p">:</span>
+                    <span class="n">latest_mtime</span> <span class="o">=</span> <span class="n">mtime</span>
+                    <span class="n">latest_type</span> <span class="o">=</span> <span class="n">file_type</span>
+            <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+                <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">path_with_name</span><span class="p">,</span> <span class="n">latest_type</span><span class="p">,</span> <span class="n">latest_mtime</span></div>
+
+
+<div class="viewcode-block" id="get_config"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.get_config">[docs]</a><span class="k">def</span> <span class="nf">get_config</span><span class="p">(</span><span class="n">path_with_name</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">load_config_json</span><span class="p">(</span><span class="n">path_with_name</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">,</span>
+                                <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;.conf&#39;</span><span class="p">,</span> <span class="s1">&#39;.ini&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">load_config_ini</span><span class="p">(</span><span class="n">path_with_name</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">,</span>
+                               <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">YAML_AVAILABLE</span> <span class="ow">and</span> <span class="n">file_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;.yml&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">load_config_yaml</span><span class="p">(</span><span class="n">path_with_name</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">,</span>
+                                <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">()</span>  <span class="c1"># No config file found</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Paulo Lopes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

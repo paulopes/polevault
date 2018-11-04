@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
+""" Pole Vault package
+"""
+
 import os
 import sys
 import json
@@ -23,8 +26,21 @@ import yaml
 
 
 class Client(object):
+    """ Client class that mimics the behavior of the Client class
+        of the hvac package, which is used to access credentials
+        stored in Hashicorp's Vault.
+    """
 
     def __init__(self, key=None):
+        """ Client constructor
+
+            Parameters
+            ----------
+            key : str, optional
+
+                The key to be used to decrypt the crendentials, in case they
+                are encrypted.
+        """
         self.key = key
 
     def read(self, *args):
@@ -49,11 +65,11 @@ CONTEXT_SETTINGS = {
 
 @click.group(context_settings=CONTEXT_SETTINGS)
 def cli():
-    '''
-    Encrypts and decrypts credentials, stores them
-    in a .ini, .conf, .json, .yml, or .yaml file,
-    and migrates them to and from Hashicorp's vault.
-    '''
+    # '''
+    # Encrypts and decrypts credentials, stores them
+    # in a .ini, .conf, .json, .yml, or .yaml file,
+    # and migrates them to and from Hashicorp's vault.
+    # '''
     pass
 
 
@@ -63,16 +79,15 @@ def cli():
 @click.option('-d', '--default', is_flag=True, help="Merge the DEFAULT entry with the other entries.")
 @click.option('-o', '--output', default='', help="File type for the encrypted file that is saved.")
 def encrypt(path, key, default, output):
-    '''
-    Encrypts credentials
-    in a .ini, .conf, .json, .yml, or .yaml file type.
+    """ Encrypts credentials
+        in a .ini, .conf, .json, .yml, or .yaml file type.
 
-    The PATH argument is the path to the file that contains the credentials.
-    Its file type can be ommited.
+        The PATH argument is the path to the file that contains the credentials.
+        Its file type can be ommited.
 
-    The KEY argument is the encryption key in base64 encoding.
-    If ommited then one is generated and presented to the user.
-    '''
+        The KEY argument is the encryption key in base64 encoding.
+        If ommited then one is generated and presented to the user.
+    """
     if not key:
         key = getpass('Encryption key: ')
 
@@ -114,16 +129,15 @@ def encrypt(path, key, default, output):
 @click.option('-t', '--token', default='', help="Hashicorp's Vault token. Defaults to the VAULT_TOKEN environment variable.")
 @click.option('-v', '--vaultpath', default='', help="Hashicorp's Vault path, if different from the argument.")
 def decrypt(path, key, default, output, url, token, vaultpath):
-    '''
-    Decrypts credentials
-    in a .ini, .conf, .json, .yml, or .yaml file.
+    """ Decrypts credentials
+        in a .ini, .conf, .json, .yml, or .yaml file.
 
-    The PATH argument is the path to the file that contains the credentials.
-    Its file type can be ommited.
+        The PATH argument is the path to the file that contains the credentials.
+        Its file type can be ommited.
 
-    The KEY argument is the decryption key in base64 encoding.
-    If ommited then the user is prompted to type one.
-    '''
+        The KEY argument is the decryption key in base64 encoding.
+        If ommited then the user is prompted to type one.
+    """
     if not key:
         key = getpass('Encryption key: ')
 

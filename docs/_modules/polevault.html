@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>polevault &mdash; Pole Vault 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Pole Vault
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">About <strong>Pole Vault</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#id1">0.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#changes">Changes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#id2">0.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id3">Changes:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">polevault</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/polevault.html">polevault package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/polevault.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/polevault.html#module-polevault.config">polevault.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/polevault.html#module-polevault">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/tests.html">tests package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/tests.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/tests.func.html">tests.func package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/tests.unit.html">tests.unit package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pole Vault</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>polevault</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for polevault</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot; Pole Vault package</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">getpass</span> <span class="k">import</span> <span class="n">getpass</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">configparser</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ConfigParser</span> <span class="k">as</span> <span class="nn">configparser</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+
+<span class="kn">import</span> <span class="nn">click</span>
+
+<span class="kn">from</span> <span class="nn">.encryption</span> <span class="k">import</span> <span class="n">encrypt_credentials</span><span class="p">,</span> <span class="n">decrypt_credentials</span>
+<span class="kn">from</span> <span class="nn">.config</span> <span class="k">import</span> <span class="n">merge_default</span><span class="p">,</span> <span class="n">get_file_type_and_mtime</span><span class="p">,</span> <span class="n">get_config</span><span class="p">,</span> <span class="n">write_yaml</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+
+<div class="viewcode-block" id="Client"><a class="viewcode-back" href="../api/polevault.html#polevault.Client">[docs]</a><span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Client class that mimics the behavior of the Client class</span>
+<span class="sd">        of the hvac package, which is used to access credentials</span>
+<span class="sd">        stored in Hashicorp&#39;s Vault.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Client constructor</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            key : str, optional</span>
+
+<span class="sd">                The key to be used to decrypt the crendentials, in case they</span>
+<span class="sd">                are encrypted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+
+<div class="viewcode-block" id="Client.read"><a class="viewcode-back" href="../api/polevault.html#polevault.Client.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">path</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">file_mtime</span> <span class="o">=</span> <span class="n">get_file_type_and_mtime</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">decrypt_credentials</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">entry</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="n">OrderedDict</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">result</span> <span class="p">}</span></div></div>
+
+
+<span class="n">CONTEXT_SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;help_option_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="n">CONTEXT_SETTINGS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
+    <span class="c1"># &#39;&#39;&#39;</span>
+    <span class="c1"># Encrypts and decrypts credentials, stores them</span>
+    <span class="c1"># in a .ini, .conf, .json, .yml, or .yaml file,</span>
+    <span class="c1"># and migrates them to and from Hashicorp&#39;s vault.</span>
+    <span class="c1"># &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="n">CONTEXT_SETTINGS</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="s1">&#39;--key&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;AES GCM 256 encryption key in base64 enconding.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--default&#39;</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Merge the DEFAULT entry with the other entries.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;File type for the encrypted file that is saved.&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Encrypts credentials</span>
+<span class="sd">        in a .ini, .conf, .json, .yml, or .yaml file type.</span>
+
+<span class="sd">        The PATH argument is the path to the file that contains the credentials.</span>
+<span class="sd">        Its file type can be ommited.</span>
+
+<span class="sd">        The KEY argument is the encryption key in base64 encoding.</span>
+<span class="sd">        If ommited then one is generated and presented to the user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;Encryption key: &#39;</span><span class="p">)</span>
+
+    <span class="n">path</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">file_mtime</span> <span class="o">=</span> <span class="n">get_file_type_and_mtime</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">encrypt_credentials</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">file_type</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">output</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">save_file</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">save_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">file_type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;.conf&#39;</span><span class="p">}:</span>
+            <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+                <span class="n">default_section</span> <span class="o">=</span> <span class="s1">&#39;DEFAULT&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">default_section</span> <span class="o">=</span> <span class="s1">&#39;DEFAULT&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">save_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">{}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">heading</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">]:</span>
+                    <span class="n">save_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">][</span><span class="n">item</span><span class="p">]))</span>
+                <span class="n">save_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">write_yaml</span><span class="p">(</span><span class="n">save_file</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="n">CONTEXT_SETTINGS</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="s1">&#39;--key&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;AES GCM 256 encryption key in base64 enconding.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--default&#39;</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Merge the DEFAULT entry with the other entries.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;File type for the encrypted file that is saved.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-u&#39;</span><span class="p">,</span> <span class="s1">&#39;--url&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Hashicorp&#39;s Vault URL.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-t&#39;</span><span class="p">,</span> <span class="s1">&#39;--token&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Hashicorp&#39;s Vault token. Defaults to the VAULT_TOKEN environment variable.&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--vaultpath&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Hashicorp&#39;s Vault path, if different from the argument.&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">vaultpath</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Decrypts credentials</span>
+<span class="sd">        in a .ini, .conf, .json, .yml, or .yaml file.</span>
+
+<span class="sd">        The PATH argument is the path to the file that contains the credentials.</span>
+<span class="sd">        Its file type can be ommited.</span>
+
+<span class="sd">        The KEY argument is the decryption key in base64 encoding.</span>
+<span class="sd">        If ommited then the user is prompted to type one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;Encryption key: &#39;</span><span class="p">)</span>
+
+    <span class="n">path</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">file_mtime</span> <span class="o">=</span> <span class="n">get_file_type_and_mtime</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">decrypt_credentials</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+
+    <span class="c1"># Only merge the DEFAULT section after decrypting.</span>
+    <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">url</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">hvac</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">To use Hashicorp&#39;s Vault you must install the hvac package.</span>
+<span class="s1">To install it try using the following command:</span>
+
+<span class="s1">  pip install hvac</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="p">:</span>
+            <span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;VAULT_TOKEN&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="p">:</span>
+                <span class="n">token</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;Vault token: &#39;</span><span class="p">)</span>
+        
+        <span class="n">client</span> <span class="o">=</span> <span class="n">hvac</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">vaultpath</span><span class="p">:</span>
+            <span class="n">vaultpath</span> <span class="o">=</span> <span class="n">path</span>
+
+        <span class="k">if</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;~&#39;</span><span class="p">:</span>
+            <span class="n">vaultpath</span> <span class="o">=</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+            <span class="n">vaultpath</span> <span class="o">=</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+            <span class="n">vaultpath</span> <span class="o">=</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">vaultpath</span> <span class="o">=</span> <span class="n">vaultpath</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">merge_default</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="c1"># kargs = { heading: json.dumps(data[heading]) }</span>
+            <span class="n">client</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vaultpath</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">heading</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">output</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">file_type</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">output</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">save_file</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">save_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">file_type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;.conf&#39;</span><span class="p">}:</span>
+                <span class="k">if</span> <span class="n">default</span><span class="p">:</span>
+                    <span class="n">default_section</span> <span class="o">=</span> <span class="s1">&#39;DEFAULT&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">default_section</span> <span class="o">=</span> <span class="s1">&#39;DEFAULT&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+                <span class="n">config_ini</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">(</span>
+                    <span class="n">dict_type</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">,</span>
+                    <span class="n">default_section</span><span class="o">=</span><span class="n">default_section</span><span class="p">,</span>
+                    <span class="n">interpolation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="n">config_ini</span><span class="o">.</span><span class="n">add_section</span><span class="p">(</span><span class="n">heading</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">]:</span>
+                        <span class="n">config_ini</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">heading</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">heading</span><span class="p">][</span><span class="n">item</span><span class="p">])</span>
+                <span class="n">config_ini</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">save_file</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">write_yaml</span><span class="p">(</span><span class="n">save_file</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">cli</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Paulo Lopes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -18,6 +18,32 @@ import os
 
 
 def load_config_ini(full_path, default=True):
+    """ Load configuration file with the option of
+        ignoring the DEFAULT section.
+
+        Parameters
+        ----------
+        full_path : str
+
+            File path to the configuration file.
+
+        default : bool, optional
+
+            Whether to allow the python ConfigParser to expand the
+            contents of the DEFAULT section into the other sections.
+            (the default is True, which expands copies all the
+            attributes inside the DEFAULT section into the other
+            sections inside which they don't exist already.)
+
+        Returns
+        -------
+        config : collections.OrderedDict
+
+            The configuration dictionary resulting from parsing the
+            configuration file. It is a collections.OrderedDict
+            dictionary so that the order of the sections and attributes
+            is preserved in the resulting dictionary.
+    """
     if default:
         default_section = 'DEFAULT'
     else:
@@ -35,7 +61,9 @@ def load_config_ini(full_path, default=True):
 
 
 def merge_default(config):
-    """ Merge a dictionary that has an item with a "DEFAULT" key,
+    """ Merge the values of the DEFAULT item into the other items.
+    
+        Merge a dictionary that has an item with a "DEFAULT" key,
         if that item is itself a dictionary, then merge that
         item's subitems with all the other items in the dictionary
         that are also themselves dictionaries.
@@ -47,12 +75,14 @@ def merge_default(config):
         Parameters
         ----------
         config : dict or OrderedDict
+
             The dictionary that is to have its "DEFAULT" key merged
             with the other keys.
 
         Returns
         -------
         OrderedDict or dict
+
             The merged version of the dictionary as an OrderedDict,
             or the original config (be it a dict or an OrderedDict)
             if it had no "DEFAULT" key to begin with, or it was not
@@ -109,8 +139,7 @@ except ImportError:
 if YAML_AVAILABLE:
 
     class OrderedDictYAMLLoader(yaml.Loader):
-        """
-        A YAML loader that loads mappings into ordered dictionaries.
+        """ A YAML loader that loads mappings into ordered dictionaries.
         """
 
         def __init__(self, *args, **kwargs):

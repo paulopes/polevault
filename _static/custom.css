@@ -1,0 +1,81 @@
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend,
+div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6,
+div.sphinxsidebar h3, div.sphinxsidebar h4,
+div.sphinxsidebar input,
+body {
+    font-family: 'Segoe UI Light', 'Helvetica Neue Light', 'Roboto Light', Helvetica, Arial, sans-serif;
+}
+
+.wy-nav-top,
+.wy-nav-side,
+.wy-side-nav-search {
+    background-color: #fcfcfc
+}
+
+a, a:visited,
+.wy-nav-top,
+.wy-nav-top a,
+.wy-nav-side,
+.wy-menu-vertical a,
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
+    color: #2980B9
+}
+
+@media screen and (min-width: 1100px) {
+    .wy-nav-content-wrap {
+        color: #404040;
+        background-color: #fcfcfc
+    }
+}
+
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l1.current>a {
+    border: none
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+    background-color: #c2c2c2
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: rgba(0,0,0,.1);
+    box-shadow: none
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #eee
+}
+
+.btn {
+    background-color: white !important;
+    border-radius: 50px;
+    box-shadow: none
+}
+
+.wy-menu-vertical a:hover span.toctree-expand,
+.wy-menu-vertical li.on a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l3 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand,
+.wy-menu-vertical li.current>a:hover span.toctree-expand {
+    color: black
+}
+
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+    font-weight: 400
+}
+
+p {
+    font-weight: 200
+}
+
+li, footer {
+    font-weight: 100
+}
+
+/* div.body li {
+    margin-left: 2em;
+}
+
+div.body li li {
+    margin-left: .5em;
+} */
