@@ -24,7 +24,7 @@ in a .ini, .conf, .json, .yml, or .yaml file,
 and can decrypt them into Hashicorp's Vault.
 ''',
     long_description=README,
-    py_modules=['polevault'],
+    packages=['polevault'],
     install_requires=[
         'click',
         # It can use pyyaml if installed, but it does not require it, but it
