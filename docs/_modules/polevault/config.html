@@ -88,12 +88,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">polevault</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../api/polevault.html">polevault package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault.config">polevault.config module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docsource/api/modules.html">polevault</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docsource/api/polevault.html">polevault package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#module-polevault.config">polevault.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#module-polevault">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -182,7 +182,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 
-<div class="viewcode-block" id="load_config_ini"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.load_config_ini">[docs]</a><span class="k">def</span> <span class="nf">load_config_ini</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="load_config_ini"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.load_config_ini">[docs]</a><span class="k">def</span> <span class="nf">load_config_ini</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Load configuration file with the option of</span>
 <span class="sd">        ignoring the DEFAULT section.</span>
 
@@ -225,7 +225,7 @@
     <span class="k">return</span> <span class="n">config</span></div>
 
 
-<div class="viewcode-block" id="merge_default"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.merge_default">[docs]</a><span class="k">def</span> <span class="nf">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+<div class="viewcode-block" id="merge_default"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.merge_default">[docs]</a><span class="k">def</span> <span class="nf">merge_default</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Merge the values of the DEFAULT item into the other items.</span>
 <span class="sd">    </span>
 <span class="sd">        Merge a dictionary that has an item with a &quot;DEFAULT&quot; key,</span>
@@ -269,7 +269,7 @@
         <span class="k">return</span> <span class="n">config</span></div>
 
 
-<div class="viewcode-block" id="load_config_json"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.load_config_json">[docs]</a><span class="k">def</span> <span class="nf">load_config_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="load_config_json"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.load_config_json">[docs]</a><span class="k">def</span> <span class="nf">load_config_json</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_json</span><span class="p">:</span>
             <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_json</span><span class="p">,</span> <span class="n">object_pairs_hook</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">)</span>
@@ -303,7 +303,7 @@
 
 <span class="k">if</span> <span class="n">YAML_AVAILABLE</span><span class="p">:</span>
 
-<div class="viewcode-block" id="OrderedDictYAMLLoader"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.OrderedDictYAMLLoader">[docs]</a>    <span class="k">class</span> <span class="nc">OrderedDictYAMLLoader</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">Loader</span><span class="p">):</span>
+<div class="viewcode-block" id="OrderedDictYAMLLoader"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.OrderedDictYAMLLoader">[docs]</a>    <span class="k">class</span> <span class="nc">OrderedDictYAMLLoader</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">Loader</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; A YAML loader that loads mappings into ordered dictionaries.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -313,13 +313,13 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;tag:yaml.org,2002:map&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">construct_yaml_map</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;tag:yaml.org,2002:omap&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">construct_yaml_map</span><span class="p">)</span>
 
-<div class="viewcode-block" id="OrderedDictYAMLLoader.construct_yaml_map"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.OrderedDictYAMLLoader.construct_yaml_map">[docs]</a>        <span class="k">def</span> <span class="nf">construct_yaml_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<div class="viewcode-block" id="OrderedDictYAMLLoader.construct_yaml_map"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.OrderedDictYAMLLoader.construct_yaml_map">[docs]</a>        <span class="k">def</span> <span class="nf">construct_yaml_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
             <span class="k">yield</span> <span class="n">data</span>
             <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_mapping</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
             <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="OrderedDictYAMLLoader.construct_mapping"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.OrderedDictYAMLLoader.construct_mapping">[docs]</a>        <span class="k">def</span> <span class="nf">construct_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="OrderedDictYAMLLoader.construct_mapping"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.OrderedDictYAMLLoader.construct_mapping">[docs]</a>        <span class="k">def</span> <span class="nf">construct_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">yaml</span><span class="o">.</span><span class="n">MappingNode</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">flatten_mapping</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -340,7 +340,7 @@
             <span class="k">return</span> <span class="n">mapping</span></div></div>
 
 
-<div class="viewcode-block" id="load_config_yaml"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.load_config_yaml">[docs]</a><span class="k">def</span> <span class="nf">load_config_yaml</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="load_config_yaml"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.load_config_yaml">[docs]</a><span class="k">def</span> <span class="nf">load_config_yaml</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">YAML_AVAILABLE</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_yaml</span><span class="p">:</span>
@@ -358,7 +358,7 @@
         <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="write_yaml"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.write_yaml">[docs]</a><span class="k">def</span> <span class="nf">write_yaml</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="write_yaml"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.write_yaml">[docs]</a><span class="k">def</span> <span class="nf">write_yaml</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">YAML_AVAILABLE</span><span class="p">:</span>
         <span class="n">final_yaml</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
         <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
@@ -382,7 +382,7 @@
 <span class="s1">&#39;&#39;&#39;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="get_file_type_and_mtime"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.get_file_type_and_mtime">[docs]</a><span class="k">def</span> <span class="nf">get_file_type_and_mtime</span><span class="p">(</span><span class="n">path_with_name</span><span class="p">):</span>
+<div class="viewcode-block" id="get_file_type_and_mtime"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.get_file_type_and_mtime">[docs]</a><span class="k">def</span> <span class="nf">get_file_type_and_mtime</span><span class="p">(</span><span class="n">path_with_name</span><span class="p">):</span>
     <span class="n">latest_mtime</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
     <span class="n">latest_type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="n">tokens</span> <span class="o">=</span> <span class="n">path_with_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
@@ -413,7 +413,7 @@
     <span class="k">return</span> <span class="n">path_with_name</span><span class="p">,</span> <span class="n">latest_type</span><span class="p">,</span> <span class="n">latest_mtime</span></div>
 
 
-<div class="viewcode-block" id="get_config"><a class="viewcode-back" href="../../api/polevault.html#polevault.config.get_config">[docs]</a><span class="k">def</span> <span class="nf">get_config</span><span class="p">(</span><span class="n">path_with_name</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="get_config"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.config.get_config">[docs]</a><span class="k">def</span> <span class="nf">get_config</span><span class="p">(</span><span class="n">path_with_name</span><span class="p">,</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">load_config_json</span><span class="p">(</span><span class="n">path_with_name</span> <span class="o">+</span> <span class="n">file_type</span><span class="p">,</span>
                                 <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">)</span>

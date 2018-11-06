@@ -88,12 +88,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">polevault</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../api/polevault.html">polevault package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault.config">polevault.config module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api/polevault.html#module-polevault">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docsource/api/modules.html">polevault</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docsource/api/polevault.html">polevault package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#module-polevault.config">polevault.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docsource/api/polevault.html#module-polevault">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -212,16 +212,16 @@
             <span class="n">MODE_GCM</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_GCM</span>
             <span class="kn">from</span> <span class="nn">Cryptodome.Random</span> <span class="k">import</span> <span class="n">get_random_bytes</span>
 
-<div class="viewcode-block" id="generate_key"><a class="viewcode-back" href="../../api/polevault.html#polevault.encryption.generate_key">[docs]</a>            <span class="k">def</span> <span class="nf">generate_key</span><span class="p">(</span><span class="n">bit_length</span><span class="o">=</span><span class="n">KEY_BIT_LENGTH</span><span class="p">):</span>
+<div class="viewcode-block" id="generate_key"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.encryption.generate_key">[docs]</a>            <span class="k">def</span> <span class="nf">generate_key</span><span class="p">(</span><span class="n">bit_length</span><span class="o">=</span><span class="n">KEY_BIT_LENGTH</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">get_random_bytes</span><span class="p">(</span><span class="n">bit_length</span> <span class="o">//</span> <span class="mi">8</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="encrypt"><a class="viewcode-back" href="../../api/polevault.html#polevault.encryption.encrypt">[docs]</a>            <span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">nonce</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="encrypt"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.encryption.encrypt">[docs]</a>            <span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">nonce</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
                 <span class="n">aesgcm</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">MODE_GCM</span><span class="p">,</span> <span class="n">nonce</span><span class="p">)</span>
                 <span class="n">aesgcm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">NON_CONFIDENTIAL_ASSOCIATED_DATA</span><span class="p">)</span>
                 <span class="n">encrypted</span> <span class="o">=</span> <span class="n">aesgcm</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">encrypted</span></div>
 
-<div class="viewcode-block" id="decrypt"><a class="viewcode-back" href="../../api/polevault.html#polevault.encryption.decrypt">[docs]</a>            <span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">nonce</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="decrypt"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.encryption.decrypt">[docs]</a>            <span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">nonce</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
                 <span class="n">aesgcm</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">MODE_GCM</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">nonce</span><span class="p">)</span>
                 <span class="n">aesgcm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">NON_CONFIDENTIAL_ASSOCIATED_DATA</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">aesgcm</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
@@ -240,7 +240,7 @@
             <span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="encrypt_credentials"><a class="viewcode-back" href="../../api/polevault.html#polevault.encryption.encrypt_credentials">[docs]</a><span class="k">def</span> <span class="nf">encrypt_credentials</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="encrypt_credentials"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.encryption.encrypt_credentials">[docs]</a><span class="k">def</span> <span class="nf">encrypt_credentials</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="p">:</span>
         <span class="n">key</span> <span class="o">=</span> <span class="n">generate_key</span><span class="p">(</span><span class="n">KEY_BIT_LENGTH</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The encryption key is: &#39;</span> <span class="o">+</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">))</span>
@@ -269,7 +269,7 @@
     <span class="k">return</span> <span class="n">new_data</span></div>
 
 
-<div class="viewcode-block" id="decrypt_credentials"><a class="viewcode-back" href="../../api/polevault.html#polevault.encryption.decrypt_credentials">[docs]</a><span class="k">def</span> <span class="nf">decrypt_credentials</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<div class="viewcode-block" id="decrypt_credentials"><a class="viewcode-back" href="../../docsource/api/polevault.html#polevault.encryption.decrypt_credentials">[docs]</a><span class="k">def</span> <span class="nf">decrypt_credentials</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="n">key</span> <span class="o">+=</span> <span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="p">((</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">b64decode</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
         

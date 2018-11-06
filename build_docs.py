@@ -9,7 +9,6 @@ import shutil
 
 PACKAGE_NAMES = (
     'polevault',
-    # 'tests',
 )
 
 ROOT = os.path.dirname(os.path.realpath(__file__))
@@ -22,7 +21,7 @@ try:
 except:
     APIDOC = 'sphinx-apidoc'
 
-API = os.path.join(ROOT, 'api')
+API = os.path.join(ROOT, 'docsource', 'api')
 
 for package in PACKAGE_NAMES:
     rst_filename = os.path.join(ROOT, package + '.rst')
@@ -30,7 +29,7 @@ for package in PACKAGE_NAMES:
         print('Removing {} file'.format(rst_filename))
         os.remove(rst_filename)
         
-    (subprocess.Popen('{} {} -o api'.format(APIDOC, package), shell=True)).communicate()
+    (subprocess.Popen('{} {} -o {}'.format(APIDOC, package, API), shell=True)).communicate()
 
 
 # Build html documentation from all .rst sources.
