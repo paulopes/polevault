@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-'''Install the "polevault" module and CLI command.'''
+'''Install the "polevault" package and CLI command.'''
 
 
 from __future__ import print_function, division
@@ -24,7 +24,8 @@ in a .ini, .conf, .json, .yml, or .yaml file,
 and can decrypt them into Hashicorp's Vault.
 ''',
     long_description=README,
-    packages=['polevault'],
+    packages=find_packages(exclude=[
+        "*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
         'click',
         # It can use pyyaml if installed, but it does not require it, but it
