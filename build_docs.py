@@ -9,7 +9,7 @@ import shutil
 
 PACKAGE_NAMES = (
     'polevault',
-    'tests',
+    # 'tests',
 )
 
 ROOT = os.path.dirname(os.path.realpath(__file__))

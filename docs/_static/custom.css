@@ -8,8 +8,12 @@ body {
 
 .wy-nav-top,
 .wy-nav-side,
-.wy-side-nav-search {
-    background-color: #fcfcfc
+.wy-side-nav-search,
+.wy-body-for-nav,
+.wy-menu-vertical a,
+.wy-nav-content-wrap,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a  {
+    background-color: #fdfdfd !important
 }
 
 a, a:visited,
@@ -22,9 +26,10 @@ a, a:visited,
 }
 
 @media screen and (min-width: 1100px) {
+    .wy-nav-content,
     .wy-nav-content-wrap {
         color: #404040;
-        background-color: #fcfcfc
+        background-color: #fdfdfd
     }
 }
 
@@ -33,17 +38,17 @@ a, a:visited,
     border: none
 }
 
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
-    background-color: #c2c2c2
-}
-
 .wy-side-nav-search input[type=text] {
     border-color: rgba(0,0,0,.1);
     box-shadow: none
 }
 
+/* .wy-menu-vertical a {
+    background-color: #fcfcfc !important
+} */
+
 .wy-menu-vertical a:hover {
-    background-color: #eee
+    background-color: white !important
 }
 
 .btn {
@@ -52,22 +57,36 @@ a, a:visited,
     box-shadow: none
 }
 
-.wy-menu-vertical a:hover span.toctree-expand,
-.wy-menu-vertical li.on a:hover span.toctree-expand,
-.wy-menu-vertical li.toctree-l3 a:hover span.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand,
-.wy-menu-vertical li.current>a:hover span.toctree-expand {
-    color: black
+.wy-menu-vertical a:hover span.toctree-expand {
+    color: black !important
 }
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
     font-weight: 500
 }
 
-p {
+body {
     font-weight: 300
 }
 
-li, footer {
-    font-weight: 200
+footer {
+    font-size: 75%
+}
+
+footer p,
+.wy-table td,
+.rst-content table.docutils td,
+.rst-content table.field-list td,
+.wy-table th,
+.rst-content th {
+    font-size: 100%
+}
+
+.rst-content table.docutils td p,
+.rst-content table.field-list td p,
+.rst-content table.field-list .field-name,
+.rst-content table.field-list .field-body,
+.docutils li {
+    line-height: 24px;
+    padding-bottom: 10px
 }

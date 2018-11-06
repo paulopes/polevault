@@ -5,4 +5,3 @@ polevault
    :maxdepth: 4
 
    polevault
-   tests
