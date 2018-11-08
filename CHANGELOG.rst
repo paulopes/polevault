@@ -2,15 +2,25 @@ Changelog
 =========
 
 
+0.1.3
+-----
+
+Changes:
+~~~~~~~~
+
+- Update dev dependencies with twine
+
+------------------------------------------------------
+
 0.1.2
 -----
 
 Changes:
 ~~~~~~~~
 
-- Add more documentation.
-- Corrections to setup.py for pypi readiness.
-- Improvements to documentation styling.
+- Add more documentation
+- Corrections to setup.py for pypi readiness
+- Improvements to documentation styling
 
 ------------------------------------------------------
 
@@ -20,7 +30,7 @@ Changes:
 Changes:
 ~~~~~~~~
 
-- Addition of sphinx documentation.
+- Addition of sphinx documentation
 
 ------------------------------------------------------
 
@@ -30,5 +40,5 @@ Changes:
 Changes:
 ~~~~~~~~
 
-- Initial version.
+- Initial version
 
