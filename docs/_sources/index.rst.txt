@@ -43,10 +43,11 @@ in the same file, like this:
 .. code-block:: console
 
     $ polevault decrypt secret secrets/servers.yml
-    Encryption key: 
+    Encryption key:
     $
 
-After this, the contents of the file will be back the way they were before encrypting.
+After this, the contents of the file will be back the way they were before
+encrypting.
 
 
 .. toctree::
