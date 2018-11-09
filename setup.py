@@ -9,6 +9,8 @@ from __future__ import print_function, division
 from setuptools import setup, find_packages
 
 
+VERSION = '0.1.4'
+
 setup(
     name='polevault',
     version=VERSION,
