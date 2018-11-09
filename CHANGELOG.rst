@@ -9,6 +9,7 @@ Changes:
 ~~~~~~~~
 
 - Update dev dependencies with twine
+- Use explicit file paths in setup.py
 
 ------------------------------------------------------
 

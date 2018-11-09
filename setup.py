@@ -8,9 +8,11 @@ from __future__ import print_function, division
 
 from setuptools import setup, find_packages
 
+import os
 
-VERSION = open('VERSION').read().splitlines()[0].strip()
-README = open('README.rst').read().strip()
+HERE = os.path.dirname(os.path.realpath(__file__))
+VERSION = open(os.path.join(HERE, 'VERSION')).read().splitlines()[0].strip()
+README = open(os.path.join(HERE, 'README.rst')).read().strip()
 
 setup(
     name='polevault',
