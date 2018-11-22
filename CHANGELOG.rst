@@ -9,6 +9,7 @@ Changes:
 ~~~~~~~~
 
 - Correct the version in VERSION
+- Switch docs to Lato fonts
 
 ------------------------------------------------------
 
