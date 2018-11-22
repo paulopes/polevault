@@ -105,3 +105,11 @@ footer p,
     line-height: 24px;
     padding-bottom: 10px
 }
+
+.wy-menu-vertical a span.toctree-expand {
+    display: none !important
+}
+
+.wy-menu-vertical a:hover span.toctree-expand {
+    display: inline !important
+}
