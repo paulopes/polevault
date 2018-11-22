@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Lato Light";
-    src: url("../fonts/Lato/Lato-Light.eot");
-    src: url("../fonts/Lato/Lato-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/Lato-Light.woff2") format("woff2"), url("../fonts/Lato/Lato-Light.woff") format("woff"), url("../fonts/Lato/Lato-Light.ttf") format("truetype");
+    src: url("fonts/Lato/Lato-Light.eot");
+    src: url("fonts/Lato/Lato-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Lato/Lato-Light.woff2") format("woff2"), url("fonts/Lato/Lato-Light.woff") format("woff"), url("fonts/Lato/Lato-Light.ttf") format("truetype");
     font-weight: 100;
     font-style: normal
 }
 @font-face {
     font-family: "Lato Light";
-    src: url("../fonts/Lato/Lato-LightItalic.eot");
-    src: url("../fonts/Lato/Lato-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/Lato-LightItalic.woff2") format("woff2"), url("../fonts/Lato/Lato-LightItalic.woff") format("woff"), url("../fonts/Lato/Lato-LightItalic.ttf") format("truetype");
+    src: url("fonts/Lato/Lato-LightItalic.eot");
+    src: url("fonts/Lato/Lato-LightItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato/Lato-LightItalic.woff2") format("woff2"), url("fonts/Lato/Lato-LightItalic.woff") format("woff"), url("fonts/Lato/Lato-LightItalic.ttf") format("truetype");
     font-weight: 100;
     font-style: italic
 }
