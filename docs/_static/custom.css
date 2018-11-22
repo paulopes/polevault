@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "Lato Light";
+    font-family: "Lato";
     src: url("fonts/Lato/Lato-Light.eot");
     src: url("fonts/Lato/Lato-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Lato/Lato-Light.woff2") format("woff2"), url("fonts/Lato/Lato-Light.woff") format("woff"), url("fonts/Lato/Lato-Light.ttf") format("truetype");
     font-weight: 100;
     font-style: normal
 }
 @font-face {
-    font-family: "Lato Light";
+    font-family: "Lato";
     src: url("fonts/Lato/Lato-LightItalic.eot");
     src: url("fonts/Lato/Lato-LightItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Lato/Lato-LightItalic.woff2") format("woff2"), url("fonts/Lato/Lato-LightItalic.woff") format("woff"), url("fonts/Lato/Lato-LightItalic.ttf") format("truetype");
     font-weight: 100;
@@ -15,13 +15,10 @@
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend,
 div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6,
-div.sphinxsidebar h3, div.sphinxsidebar h4 {
-    font-family: 'Lato', 'Helvetica Neue', 'Roboto', Helvetica, Arial, sans-serif;
-}
-
+div.sphinxsidebar h3, div.sphinxsidebar h4,
 div.sphinxsidebar input,
 body {
-    font-family: 'Lato Light', 'Helvetica Neue Light', 'Roboto Light', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', 'Helvetica Neue Light', 'Roboto Light', Helvetica, Arial, sans-serif;
 }
 
 .wy-nav-top,
@@ -80,7 +77,7 @@ a, a:visited,
 }
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
-    font-weight: 500
+    font-weight: 400
 }
 
 body {
