@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Pole Vault'
+project = 'polevault'
 copyright = '2018, Paulo Lopes'
 author = 'Paulo Lopes'
 
