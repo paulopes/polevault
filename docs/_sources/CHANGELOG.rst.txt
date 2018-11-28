@@ -10,6 +10,8 @@ Changes:
 
 - Correct the version in VERSION
 - Switch docs to Lato fonts
+- Various cosmetic improvements to docs
+- Lay the ground work for implementing a GUI
 
 ------------------------------------------------------
 

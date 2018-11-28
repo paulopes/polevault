@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; polevault 0.1.5 documentation</title>
+  <title>Overview &mdash; polevault 0.1.5 documentation</title>
   
 
   
@@ -28,7 +28,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="../CHANGELOG.html" />
+    <link rel="prev" title="About Pole Vault" href="../README.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -75,12 +77,12 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">About <strong>Pole Vault</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../README.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../docsource/overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Changelog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#id1">0.1.5</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#changes">Changes:</a></li>
@@ -108,12 +110,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../docsource/api/modules.html"><strong>Pole Vault</strong> API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../docsource/api/polevault.html">polevault package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../docsource/api/polevault.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../docsource/api/polevault.html#module-polevault.config">polevault.config module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../docsource/api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../docsource/api/polevault.html#module-polevault">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html"><strong>Pole Vault</strong> API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/polevault.html">polevault package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/polevault.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polevault.html#module-polevault.config">polevault.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polevault.html#module-polevault.encryption">polevault.encryption module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/polevault.html#module-polevault">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -163,7 +165,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+      <li>Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,16 +180,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="polevault.html">polevault</a></li>
-<ul><li><a href="polevault/config.html">polevault.config</a></li>
-<li><a href="polevault/encryption.html">polevault.encryption</a></li>
-</ul></ul>
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>polevault</strong> python package can be used to encrypt and decrypt entries
+in user provided text-based configuration files, containing credentials or
+API keys.</p>
+<p>For example, if the user has a <code class="docutils literal notranslate"><span class="pre">secrets/servers.yml</span></code> file containing:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>server_a:
+  address: 192.168.64.1
+  username: admin
+  password: abc123!
+
+server_b:
+  address: 192.168.64.2
+  username: admin
+  password: xyz789!
+</pre></div>
+</div>
+<p>If the user types this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> polevault encrypt secret secrets/servers.yml
+<span class="go">Encryption key:</span>
+<span class="go">The encryption key is: fp3Hx6zUpFuW8jufDjeneFNWGhGbIkiDFCfXRt0ZS1E</span>
+</pre></div>
+</div>
+<p>The file will be changed to look something like this:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server_a</span><span class="p">:</span>
+    <span class="n">encrypted</span><span class="p">:</span> <span class="n">sAtnD717a2A</span><span class="o">+</span><span class="n">nb4326h4</span><span class="o">+</span><span class="n">VbkUsGihWzu4DXnp530P008Um</span><span class="o">/</span><span class="mi">2</span><span class="n">qNZezfqw</span><span class="o">+</span><span class="n">cMCCeMe</span><span class="o">...</span>
+
+<span class="n">server_b</span><span class="p">:</span>
+    <span class="n">encrypted</span><span class="p">:</span> <span class="mi">2</span><span class="n">nKuLuV</span><span class="o">/</span><span class="mi">6</span><span class="n">NwYVne1hZrJF786U8d1hIuCO4ctM7O6vomzjMju</span><span class="o">/</span><span class="n">VPssRzMADgPMTJc</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>The encryption key that was provided can later be used to decrypt the entries
+in the same file, like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> polevault decrypt secret secrets/servers.yml
+<span class="go">Encryption key:</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>After this, the contents of the file will be back the way they were before
+encrypting.</p>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../CHANGELOG.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../README.html" class="btn btn-neutral" title="About Pole Vault" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

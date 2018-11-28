@@ -21,6 +21,7 @@ import click
 
 from .encryption import encrypt_credentials, decrypt_credentials
 from .config import merge_default, get_file_type_and_mtime, get_config, write_yaml
+from .server import gui
 
 import yaml
 
@@ -62,6 +63,7 @@ class Client(object):
 CONTEXT_SETTINGS = {
     "help_option_names": ['-h', '--help'],
 }
+
 
 @click.group(context_settings=CONTEXT_SETTINGS)
 def cli():
@@ -214,5 +216,11 @@ To install it try using the following command:
                 write_yaml(save_file, data)
 
 
+def main():
+    if len(sys.argv) > 1:
+        cli()
+    else:
+        gui()
+
 if __name__ == "__main__":
-    cli()
+    main()

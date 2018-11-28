@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="static/css/photon.css">
+        <!-- <link rel="stylesheet" type="text/css" href="static/css/winstrap.css"> -->
+
+        <style>
+            #response-container {
+                display: none;
+                padding: 3rem;
+                margin: 3rem 5rem;
+                font-size: 120%;
+                border: 5px dashed #ccc;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="window">
+            <header class="toolbar toolbar-header">
+                <h1 class="title">JS API Example</h1>
+            </header>
+
+            <div class="window-content">
+                <div id="response-container"></div>
+            </div>
+
+            <footer class="toolbar toolbar-footer">
+                <div class="toolbar-actions">
+                    <button class="btn btn-primary" onClick="fullscreen()">Full Screen</button>
+                    <button class="btn btn-default" id="heavy-stuff-btn" onClick="doHeavyStuff()">Perform a heavy operation</button>
+                    <button class="btn btn-default" onClick="pythonVersion()">Python Version</button>
+                    <button class="btn btn-default" onClick="choosePath()">Choose Path</span></button>
+                    <button class="btn btn-negative btn-danger" onClick="closeDown()">Close</button>
+                </div>
+            </footer>
+
+        </div>
+        
+        <script>
+        function showResponse(response) {
+            var container = document.getElementById('response-container')
+
+            container.innerText = response.message
+            container.style.display = 'block'
+        }
+
+        function doHeavyStuff() {
+            var btn = document.getElementById('heavy-stuff-btn')
+
+            showResponse({message: 'Working...'})
+
+            var xhttp = new XMLHttpRequest();
+
+            resource = 'heavy_stuff/do';
+
+            xhttp.addEventListener('load', function() {
+                showResponse(JSON.parse(this.responseText));
+                btn.onclick = doHeavyStuff;
+                btn.innerText = 'Perform a heavy operation';
+            });
+
+            xhttp.addEventListener('error', function() {
+                console.log("Request to " + resource + " failed");
+            });
+
+            xhttp.open("GET", resource, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+
+            btn.innerText = 'Cancel the heavy operation';
+            btn.onclick = cancelHeavyStuff;
+        }
+
+        function cancelHeavyStuff() {
+            var xhttp = new XMLHttpRequest();
+
+            resource = 'heavy_stuff/cancel';
+
+            // xhttp.addEventListener('load', function() {
+            //     showResponse(JSON.parse(this.responseText));
+            // });
+
+            xhttp.addEventListener('error', function() {
+                console.log("Request to " + resource + " failed");
+            });
+
+            xhttp.open("GET", resource, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+        function fullscreen() {
+            var xhttp = new XMLHttpRequest();
+
+            resource = 'fullscreen'
+
+            xhttp.addEventListener('load', function() {
+                showResponse(JSON.parse(this.responseText));
+            });
+
+            xhttp.addEventListener('error', function() {
+                console.log("Request to " + resource + " failed");
+            });
+            
+            xhttp.open("GET", resource, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+        function pythonVersion() {
+            var xhttp = new XMLHttpRequest();
+
+            resource = 'python_version'
+
+            xhttp.addEventListener('load', function() {
+                showResponse(JSON.parse(this.responseText));
+            });
+
+            xhttp.addEventListener('error', function() {
+                console.log("Request to " + resource + " failed");
+            });
+            
+            xhttp.open("GET", resource, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+        function choosePath() {
+            var xhttp = new XMLHttpRequest();
+
+            resource = 'choose/path'
+
+            xhttp.addEventListener('load', function() {
+                showResponse(JSON.parse(this.responseText));
+            });
+
+            xhttp.addEventListener('error', function() {
+                console.log("Request to " + resource + " failed");
+            });
+            
+            xhttp.open("GET", resource, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+
+        function closeDown() {
+            var xhttp = new XMLHttpRequest();
+
+            resource = 'close_down'
+
+            // xhttp.addEventListener('load', function() {
+            //     showResponse(this.responseText);
+            // });
+
+            // xhttp.addEventListener('error', function() {
+            //     console.log("Request to " + resource + " failed");
+            // });
+            
+            xhttp.open("GET", resource, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+        </script>
+    </body>
+</html>

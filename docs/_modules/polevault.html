@@ -76,7 +76,11 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../README.html">About <strong>Pole Vault</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">About <strong>Pole Vault</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../docsource/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Changelog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#id1">0.1.5</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#changes">Changes:</a></li>
@@ -165,7 +169,7 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/paulopes/polevault" class="fa fa-github"> Edit on GitHub</a>
+        <a href="https://github.com/paulopes/polevault" class="fa fa-github"> GitHub</a>
       </li>
     
   </ul>
@@ -200,6 +204,7 @@
 
 <span class="kn">from</span> <span class="nn">.encryption</span> <span class="k">import</span> <span class="n">encrypt_credentials</span><span class="p">,</span> <span class="n">decrypt_credentials</span>
 <span class="kn">from</span> <span class="nn">.config</span> <span class="k">import</span> <span class="n">merge_default</span><span class="p">,</span> <span class="n">get_file_type_and_mtime</span><span class="p">,</span> <span class="n">get_config</span><span class="p">,</span> <span class="n">write_yaml</span>
+<span class="kn">from</span> <span class="nn">.server</span> <span class="k">import</span> <span class="n">gui</span>
 
 <span class="kn">import</span> <span class="nn">yaml</span>
 
@@ -241,6 +246,7 @@
 <span class="n">CONTEXT_SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;help_option_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">],</span>
 <span class="p">}</span>
+
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="n">CONTEXT_SETTINGS</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
@@ -393,8 +399,14 @@
                 <span class="n">write_yaml</span><span class="p">(</span><span class="n">save_file</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 
 
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../docsource/api/polevault.html#polevault.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">cli</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gui</span><span class="p">()</span></div>
+
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">cli</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 
            </div>
